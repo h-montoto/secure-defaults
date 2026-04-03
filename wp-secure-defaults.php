@@ -9,7 +9,7 @@
  * Author:      Hugo Montoto
  * License:     GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wp-secure-defaults
+ * Text Domain: wp-secure-defaults-main
  */
 
 defined('ABSPATH') || exit;
@@ -26,7 +26,7 @@ if (version_compare(PHP_VERSION, '8.0.0', '<')) {
             '<div class="notice notice-error"><p>%s</p></div>',
             esc_html__(
                 'WP Secure Defaults requires PHP 8.0 or higher. The plugin has not been loaded.',
-                'wp-secure-defaults'
+                'wp-secure-defaults-main'
             )
         );
     });

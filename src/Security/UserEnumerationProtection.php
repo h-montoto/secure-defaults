@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+defined('ABSPATH') || exit;
+
 namespace WPSecureDefaults\Security;
 
 use WPSecureDefaults\Utils\Config;
@@ -42,6 +44,7 @@ final class UserEnumerationProtection
             return $redirect;
         }
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- intentional: detecting enumeration on public URLs, no nonce expected
         if (isset($_GET['author']) && is_numeric($_GET['author'])) {
             return false;
         }
@@ -59,6 +62,7 @@ final class UserEnumerationProtection
             return;
         }
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- intentional: detecting enumeration on public URLs, no nonce expected
         if (isset($_GET['author']) && is_numeric($_GET['author'])) {
             wp_safe_redirect(home_url('/'), 301);
             exit;

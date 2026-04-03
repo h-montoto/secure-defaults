@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+defined('ABSPATH') || exit;
+
 namespace WPSecureDefaults\Cleanup;
 
 /**
@@ -53,7 +55,8 @@ final class EmojiDisabler
             return $urls;
         }
 
-        // Use the filter to get the actual SVG URL in case it changes in future WP versions
+        // Use the WP core filter to get the actual SVG URL in case it changes in future versions
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- emoji_svg_url is a WP core hook
         $emojiSvgUrl = (string) apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/');
 
         return array_values(array_filter($urls, function (mixed $url) use ($emojiSvgUrl): bool {

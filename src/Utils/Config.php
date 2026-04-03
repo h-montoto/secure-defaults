@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+defined('ABSPATH') || exit;
+
 namespace WPSecureDefaults\Utils;
 
 /**
@@ -39,6 +41,7 @@ final class Config
     {
         $default = self::$defaults[$feature] ?? false;
 
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound -- prefix is always 'wp_secure_defaults_'
         return (bool) apply_filters(self::FILTER_PREFIX . $feature, $default);
     }
 }
