@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Secure Defaults
- * Plugin URI:  https://github.com/h-montoto/wp-secure-defaults
+ * Plugin URI:  https://github.com/h-montoto/secure-defaults
  * Description: Baseline security hardening for WordPress. Disables comments, XML-RPC, restricts REST API, prevents user enumeration, and removes unnecessary head output.
  * Version:     1.0.0
  * Requires at least: 6.0

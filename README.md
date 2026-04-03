@@ -15,7 +15,7 @@ It works entirely through WordPress hooks — no database writes, no persistent 
 
 ## Installation
 
-1. Copy the `wp-secure-defaults/` directory into `wp-content/plugins/`.
+1. Copy the `secure-defaults/` directory into `wp-content/plugins/`.
 2. Activate the plugin from **Plugins > Installed Plugins**.
 
 That's it. All features are enabled by default.
