@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace WPSecureDefaults\Security;
+namespace SecureDefaults\Security;
 
 defined('ABSPATH') || exit;
 
-use WPSecureDefaults\Utils\Config;
+use SecureDefaults\Utils\Config;
 
 /**
  * Prevents user enumeration via ?author=N query strings and the REST API.

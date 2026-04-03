@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace WPSecureDefaults\Security;
+namespace SecureDefaults\Security;
 
 defined('ABSPATH') || exit;
 
-use WPSecureDefaults\Utils\Config;
+use SecureDefaults\Utils\Config;
 
 /**
  * Restricts REST API access to authenticated users only.
@@ -58,7 +58,7 @@ final class RestApiHardener
 
         return new \WP_Error(
             'rest_not_authorized',
-            __('REST API access is restricted to authenticated users.', 'wp-secure-defaults-main'),
+            __('REST API access is restricted to authenticated users.', 'secure-defaults'),
             ['status' => 401]
         );
     }

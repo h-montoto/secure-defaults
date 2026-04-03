@@ -1,4 +1,4 @@
-# WP Secure Defaults
+# Secure Defaults
 
 A lightweight, production-ready WordPress plugin that applies opinionated security hardening as a baseline for any WordPress installation.
 
@@ -28,22 +28,22 @@ That's it. All features are enabled by default.
 
 | Feature | Filter to disable |
 |---------|-------------------|
-| Disable comments globally (all post types, REST endpoint, admin UI) | `wp_secure_defaults_disable_comments` |
-| Disable XML-RPC and pingbacks | `wp_secure_defaults_disable_xmlrpc` |
-| Restrict REST API to authenticated users only | `wp_secure_defaults_restrict_rest_api` |
-| Remove `/wp/v2/users` REST endpoint | `wp_secure_defaults_restrict_rest_users` |
-| Block `?author=N` user enumeration | `wp_secure_defaults_prevent_user_enumeration` |
-| Disable file editor in wp-admin (`DISALLOW_FILE_EDIT`) | `wp_secure_defaults_admin_hardening` |
-| Remove dashboard widgets (Recent Comments, WP Events & News) | `wp_secure_defaults_admin_hardening` |
+| Disable comments globally (all post types, REST endpoint, admin UI) | `secure_defaults_disable_comments` |
+| Disable XML-RPC and pingbacks | `secure_defaults_disable_xmlrpc` |
+| Restrict REST API to authenticated users only | `secure_defaults_restrict_rest_api` |
+| Remove `/wp/v2/users` REST endpoint | `secure_defaults_restrict_rest_users` |
+| Block `?author=N` user enumeration | `secure_defaults_prevent_user_enumeration` |
+| Disable file editor in wp-admin (`DISALLOW_FILE_EDIT`) | `secure_defaults_admin_hardening` |
+| Remove dashboard widgets (Recent Comments, WP Events & News) | `secure_defaults_admin_hardening` |
 
 ### Cleanup
 
 | Feature | Filter to disable |
 |---------|-------------------|
-| Remove RSD, WLW, generator, shortlink, REST link from `<head>` | `wp_secure_defaults_clean_head` |
-| Remove WP version from RSS feeds (`the_generator`) | `wp_secure_defaults_clean_head` |
-| Disable emoji scripts, styles, and DNS prefetch | `wp_secure_defaults_disable_emojis` |
-| Disable oEmbed scripts, rewrite rules, and REST route | `wp_secure_defaults_disable_embeds` |
+| Remove RSD, WLW, generator, shortlink, REST link from `<head>` | `secure_defaults_clean_head` |
+| Remove WP version from RSS feeds (`the_generator`) | `secure_defaults_clean_head` |
+| Disable emoji scripts, styles, and DNS prefetch | `secure_defaults_disable_emojis` |
+| Disable oEmbed scripts, rewrite rules, and REST route | `secure_defaults_disable_embeds` |
 
 ---
 
@@ -55,31 +55,31 @@ Every feature can be toggled via a WordPress filter. Add the relevant code to yo
 
 ```php
 // Keep comments enabled
-add_filter('wp_secure_defaults_disable_comments', '__return_false');
+add_filter('secure_defaults_disable_comments', '__return_false');
 
 // Keep XML-RPC enabled
-add_filter('wp_secure_defaults_disable_xmlrpc', '__return_false');
+add_filter('secure_defaults_disable_xmlrpc', '__return_false');
 
 // Allow public REST API access
-add_filter('wp_secure_defaults_restrict_rest_api', '__return_false');
+add_filter('secure_defaults_restrict_rest_api', '__return_false');
 
 // Keep /wp/v2/users endpoint available
-add_filter('wp_secure_defaults_restrict_rest_users', '__return_false');
+add_filter('secure_defaults_restrict_rest_users', '__return_false');
 
 // Allow author enumeration
-add_filter('wp_secure_defaults_prevent_user_enumeration', '__return_false');
+add_filter('secure_defaults_prevent_user_enumeration', '__return_false');
 
 // Allow file editing in wp-admin
-add_filter('wp_secure_defaults_admin_hardening', '__return_false');
+add_filter('secure_defaults_admin_hardening', '__return_false');
 
 // Keep full <head> output
-add_filter('wp_secure_defaults_clean_head', '__return_false');
+add_filter('secure_defaults_clean_head', '__return_false');
 
 // Keep emoji support
-add_filter('wp_secure_defaults_disable_emojis', '__return_false');
+add_filter('secure_defaults_disable_emojis', '__return_false');
 
 // Keep oEmbed support
-add_filter('wp_secure_defaults_disable_embeds', '__return_false');
+add_filter('secure_defaults_disable_embeds', '__return_false');
 ```
 
 ### Disable everything (use as a conditional baseline)
@@ -98,7 +98,7 @@ $features = [
 ];
 
 foreach ($features as $feature) {
-    add_filter("wp_secure_defaults_{$feature}", '__return_false');
+    add_filter("secure_defaults_{$feature}", '__return_false');
 }
 ```
 

@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace WPSecureDefaults\Utils;
+namespace SecureDefaults\Utils;
 
 defined('ABSPATH') || exit;
 
 /**
- * Central configuration for WP Secure Defaults.
+ * Central configuration for Secure Defaults.
  *
  * Each feature maps to a WordPress filter that allows developers to override
  * the default behaviour from a theme's functions.php or another plugin:
  *
- *   add_filter('wp_secure_defaults_disable_comments', '__return_false');
+ *   add_filter('secure_defaults_disable_comments', '__return_false');
  *
  * Unknown features default to false (fail-closed).
  */
 final class Config
 {
-    private const FILTER_PREFIX = 'wp_secure_defaults_';
+    private const FILTER_PREFIX = 'secure_defaults_';
 
     /**
      * Default enabled/disabled state for each feature.
@@ -41,7 +41,7 @@ final class Config
     {
         $default = self::$defaults[$feature] ?? false;
 
-        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound -- prefix is always 'wp_secure_defaults_'
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound -- prefix is always 'secure_defaults_'
         return (bool) apply_filters(self::FILTER_PREFIX . $feature, $default);
     }
 }

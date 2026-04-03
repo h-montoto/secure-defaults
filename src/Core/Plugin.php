@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace WPSecureDefaults\Core;
+namespace SecureDefaults\Core;
 
-use WPSecureDefaults\Cleanup;
-use WPSecureDefaults\Security;
-use WPSecureDefaults\Utils\Config;
+use SecureDefaults\Cleanup;
+use SecureDefaults\Security;
+use SecureDefaults\Utils\Config;
 
 /**
  * Main plugin orchestrator.

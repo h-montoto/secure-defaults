@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace WPSecureDefaults\Core;
+namespace SecureDefaults\Core;
 
 /**
- * Simple PSR-4 autoloader for the WPSecureDefaults namespace.
+ * Simple PSR-4 autoloader for the SecureDefaults namespace.
  *
- * Maps WPSecureDefaults\ to the src/ directory using the plugin
- * constant WP_SECURE_DEFAULTS_DIR defined in the bootstrap file.
+ * Maps SecureDefaults\ to the src/ directory using the plugin
+ * constant SECURE_DEFAULTS_DIR defined in the bootstrap file.
  */
 final class Autoloader
 {
-    private const NAMESPACE_PREFIX = 'WPSecureDefaults\\';
+    private const NAMESPACE_PREFIX = 'SecureDefaults\\';
 
     public static function register(): void
     {
@@ -33,7 +33,7 @@ final class Autoloader
             substr($class, strlen(self::NAMESPACE_PREFIX))
         );
 
-        $filePath = WP_SECURE_DEFAULTS_DIR . 'src' . DIRECTORY_SEPARATOR . $relativePath . '.php';
+        $filePath = SECURE_DEFAULTS_DIR . 'src' . DIRECTORY_SEPARATOR . $relativePath . '.php';
 
         // Fail silently — other autoloaders in the chain should still get a chance
         if (file_exists($filePath)) {

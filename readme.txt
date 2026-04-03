@@ -33,7 +33,7 @@ Secure Defaults applies opinionated security hardening as a baseline for any Wor
 
 Every feature can be toggled independently via WordPress filters:
 
-`add_filter('wp_secure_defaults_disable_comments', '__return_false');`
+`add_filter('secure_defaults_disable_comments', '__return_false');`
 
 See the full filter list in the FAQ section.
 
@@ -50,19 +50,19 @@ All features are enabled by default. No configuration required.
 
 Add the relevant filter to your theme's `functions.php` or a site-specific plugin:
 
-`add_filter('wp_secure_defaults_disable_comments', '__return_false');`
+`add_filter('secure_defaults_disable_comments', '__return_false');`
 
 Available filters:
 
-* `wp_secure_defaults_disable_comments`
-* `wp_secure_defaults_disable_xmlrpc`
-* `wp_secure_defaults_restrict_rest_api`
-* `wp_secure_defaults_restrict_rest_users`
-* `wp_secure_defaults_prevent_user_enumeration`
-* `wp_secure_defaults_admin_hardening`
-* `wp_secure_defaults_clean_head`
-* `wp_secure_defaults_disable_emojis`
-* `wp_secure_defaults_disable_embeds`
+* `secure_defaults_disable_comments`
+* `secure_defaults_disable_xmlrpc`
+* `secure_defaults_restrict_rest_api`
+* `secure_defaults_restrict_rest_users`
+* `secure_defaults_prevent_user_enumeration`
+* `secure_defaults_admin_hardening`
+* `secure_defaults_clean_head`
+* `secure_defaults_disable_emojis`
+* `secure_defaults_disable_embeds`
 
 = Will this break the Gutenberg block editor? =
 
@@ -71,7 +71,7 @@ No. The REST API restriction only applies to unauthenticated requests. Logged-in
 = Will this break other plugins that use XML-RPC? =
 
 Yes, intentionally. If you need XML-RPC for a specific plugin, disable the feature:
-`add_filter('wp_secure_defaults_disable_xmlrpc', '__return_false');`
+`add_filter('secure_defaults_disable_xmlrpc', '__return_false');`
 
 = Does deactivating the plugin undo all changes? =
 

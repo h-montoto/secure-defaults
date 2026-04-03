@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WPSecureDefaults\Cleanup;
+namespace SecureDefaults\Cleanup;
 
 defined('ABSPATH') || exit;
 

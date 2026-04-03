@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WPSecureDefaults\Security;
+namespace SecureDefaults\Security;
 
 defined('ABSPATH') || exit;
 
